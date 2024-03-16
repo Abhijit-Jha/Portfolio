@@ -3,4 +3,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  width: 100vw;
+}
+body{
+  font-family: Ubuntu, sans-serif;
+  overflow-x: hidden;
 }

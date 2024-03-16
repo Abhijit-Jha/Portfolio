@@ -1,15 +1,32 @@
-
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import TextTransition, { presets } from "react-text-transition";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
   function toggleMenu() {
     setOpen(!open);
   }
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 100) {
+        setScroll(true);
+        // console.log("done True")
+      } else {
+        setScroll(false);
+        // console.log("done false")
+      }
+      // console.log(window.scrollY,scroll)
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   function Menus() {
     if (open === false) {
@@ -48,10 +65,14 @@ export default function Header() {
       );
     }
   }
-  
+
   return (
     <div className="back ">
-      <div className="flex justify-between h-28 font-Ubuntu shadow-md fixed w-full ">
+      <div
+        className={`flex justify-between h-28 font-Ubuntu shadow-md  w-screen fixed ease-in transition-all duration-300 ${
+          scroll ? "bg-red-700" : ""
+        }`}
+      >
         <div className="text-5xl ml-20 mt-6 mb-6 space-x-4 tracking-widest cursor-pointer text-white h-10">
           Abhijit
         </div>
@@ -62,53 +83,87 @@ export default function Header() {
           <Menus />
         </div>
         <div
-          className={`lg:flex lg:space-x-20 lg:mr-40 lg:mt-10 lg:mb-6 lg:opacity-100 md:flex md:mt-10 md:space-x-14 md:mr-4 transition-all duration-500 ease-in md:text-white text-black font-semibold h-20 shadow-2xl ${
+          className={`lg:flex lg:space-x-20 lg:mr-40 lg:mt-10 lg:mb-6 lg:opacity-100 md:flex md:mt-10 md:space-x-14 md:mr-4 transition-all duration-500 ease-in  md:text-white text-black font-semibold  ${
             open
-              ? "absolute text-center font-Ubuntu text-6xl space-y-16 top-20 text-white w-screen h-10 ease-in transition-all duration-300 cursor-pointer pt-16 "
+              ? "absolute text-center font-Ubuntu text-6xl space-y-16 top-20 text-white  ease-in transition-all duration-300 cursor-pointer pt-16 h-screen w-screen bg-black"
               : "hidden"
-          } `}
+          }
+           `}
         >
-          <div className="lg:hover:text-red-700  ease-in transition-all duration-300 cursor-pointer hover:text-red-700 h-10">
+          <div
+            className={` ${
+              scroll ? "" : "hover:text-red-700"
+            }  ease-in transition-all duration-300 cursor-pointer h-10`}
+          >
             Home
           </div>
-          <div className="md:hover:text-red-700  ease-in transition-all duration-300 cursor-pointer   hover:text-red-700  h-10">
+          <div
+            className={` ${
+              scroll ? "" : "hover:text-red-700"
+            }  ease-in transition-all duration-300 cursor-pointer h-10`}
+          >
             About
           </div>
-          <div className="lg:hover:text-red-700  ease-in transition-all duration-300 cursor-pointer hover:text-red-700 h-10 ">
+          <div
+            className={` ${
+              scroll ? "" : "hover:text-red-700"
+            }  ease-in transition-all duration-300 cursor-pointer h-10`}
+          >
             Skill
           </div>
-          <div className="lg:hover:text-red-700  ease-in transition-all duration-300 cursor-pointer hover:text-red-700  h-10">
+          <div
+            className={` ${
+              scroll ? "" : "hover:text-red-700"
+            }  ease-in transition-all duration-300 cursor-pointer h-10`}
+          >
             Projects
           </div>
-          <div className="lg:hover:text-red-700  ease-in transition-all duration-300 cursor-pointer hover:text-red-700 ">
+          <div
+            className={` ${
+              scroll ? "" : "hover:text-red-700"
+            }  ease-in transition-all duration-300 cursor-pointer h-10`}
+          >
             Contact
           </div>
         </div>
       </div>
-      <div className="z-30">
-      {!open && <FrontPage />}
+      <div className="">
+        <FrontPage open={open} />
       </div>
     </div>
   );
 }
 
-function FrontPage() {
+function FrontPage({ open }) {
   const TEXTS = ["Coder", "Developer", "Believer"];
-  console.log(open)
-  
+  console.log(open);
+
   return (
-    <div className="w-screen h-screen text-white  ">
-      <div className="lg:absolute lg:left-56 lg:top-80 lg:space-y-5 md:absolute md:left-20 absolute top-1/2 left-20 ">
+    <div className="w-screen h-screen text-white overflow-x-hidden">
+      <div
+        className={`lg:absolute transition ease-in duration-300 lg:left-56 lg:top-80 lg:space-y-5 md:absolute md:left-20 absolute top-1/2 left-20 w-full z-0 ${
+          open ? "hidden" : ""
+        }`}
+      >
         <div className={`space-x-5 text-4xl `}>Hello,my name is </div>
         <div className="font-bold text-7xl tracking-wider">Abhijit Jha</div>
         <div className="flex space-x-4  text-4xl">
           <div>And I am a</div>
           <div>
-          <TypeAnimation className="text-red-700" sequence={TEXTS} wrapper="div" speed={600} deletionSpeed={150} repeat={Infinity}></TypeAnimation>
+            <TypeAnimation
+              className="text-red-700"
+              sequence={TEXTS}
+              wrapper="div"
+              speed={600}
+              deletionSpeed={150}
+              repeat={Infinity}
+            ></TypeAnimation>
           </div>
+        </div>
+        <div>
+          <button>JOIN NOW</button>
         </div>
       </div>
     </div>
   );
 }
-

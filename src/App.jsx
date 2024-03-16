@@ -6,6 +6,7 @@ import Header from './component/Header'
 
 import Skills from './component/Skills'
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import About from './component/About'
 
 function App() {
   return <>
@@ -22,6 +23,7 @@ function App() {
 function CompleteFrontPage(){
   return <>
   <Header/>
+  <About/>
   <Skills/>
   </>
 }
