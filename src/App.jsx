@@ -7,6 +7,8 @@ import Header from './component/Header'
 import Skills from './component/Skills'
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import About from './component/About'
+import Contact from './component/Contact'
+import Projects from './component/Projects'
 
 function App() {
   return <>
@@ -25,6 +27,8 @@ function CompleteFrontPage(){
   <Header/>
   <About/>
   <Skills/>
+  <Projects/>
+  <Contact/>
   </>
 }
 

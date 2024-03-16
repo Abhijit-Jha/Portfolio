@@ -12,7 +12,7 @@ export default function Skills() {
           what i know
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-5 ml-60 space-y-4">
+      <div className="grid lg:grid-cols-4 gap-10  lg:place-self-center md:ml-2 md:mt-2 space-y-4 md:grid-cols-3 grid-cols-2  transition-all ease-linear delay-150">
         <CircularProgressbarAdder percentage={80} skillName="HTML" />
         <CircularProgressbarAdder percentage={80} skillName="CSS" />
         <CircularProgressbarAdder percentage={85} skillName="JavaScript" />
@@ -20,7 +20,7 @@ export default function Skills() {
         <CircularProgressbarAdder percentage={80} skillName="React" />
         <CircularProgressbarAdder percentage={80} skillName="MongoDB" />
         <CircularProgressbarAdder percentage={80} skillName="Express" />
-        <CircularProgressbarAdder percentage={80} skillName="Express" />
+        <CircularProgressbarAdder percentage={80} skillName="Version Control" />
       </div>
     </div>
   );
@@ -28,7 +28,7 @@ export default function Skills() {
 
 function CircularProgressbarAdder({ percentage, skillName }) {
   return (
-    <div className="w-40 space-y-3">
+    <div className="w-40 space-y-3 place-self-center">
       <CircularProgressbar
         className="w-40"
         value={percentage}

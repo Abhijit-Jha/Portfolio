@@ -67,7 +67,7 @@ export default function Header() {
   }
 
   return (
-    <div className="back ">
+    <div className="back w-">
       <div
         className={`flex justify-between h-28 font-Ubuntu shadow-md  w-screen fixed ease-in transition-all duration-300 ${
           scroll ? "bg-red-700" : ""
@@ -145,7 +145,7 @@ function FrontPage({ open }) {
           open ? "hidden" : ""
         }`}
       >
-        <div className={`space-x-5 text-4xl `}>Hello,my name is </div>
+        <div className={`space-x-5 md:text-4xl text-2xl`}>Hello,my name is </div>
         <div className="font-bold text-7xl tracking-wider">Abhijit Jha</div>
         <div className="flex space-x-4  text-4xl">
           <div>And I am a</div>
@@ -161,7 +161,9 @@ function FrontPage({ open }) {
           </div>
         </div>
         <div>
-          <button>JOIN NOW</button>
+          <button className="bg-red-700 w-36 h-12 rounded-lg text-xl font-bold text-white text-center ease-in transition-all duration-300 hover:bg-transparent  border-2 border-red-700">
+            Join Now
+          </button>
         </div>
       </div>
     </div>
