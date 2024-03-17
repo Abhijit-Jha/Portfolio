@@ -2,7 +2,7 @@ import background from "../store/image/BackgroundImage.jpg";
 
 export default function Projects() {
   return (
-    <div className="m-10 bg-white ">
+    <div className="m-10">
       <div className="text-4xl font-bold text-center">Projects</div>
       <div className="font-light text-center">Top Projects</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 mt-10 ml-10">
