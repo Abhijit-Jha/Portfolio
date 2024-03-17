@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Header from './component/Header'
+import Header, { FrontPage } from './component/Header'
 
 import Skills from './component/Skills'
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -25,6 +25,7 @@ function App() {
 function CompleteFrontPage(){
   return <>
   <Header/>
+  {/* <FrontPage open={open}></FrontPage> */}
   <About/>
   <Skills/>
   <Projects/>

@@ -13,12 +13,12 @@ export default function Header() {
     function handleScroll() {
       if (window.scrollY > 100) {
         setScroll(true);
-        // console.log("done True")
+        console.log("done True")
       } else {
         setScroll(false);
-        // console.log("done false")
+        console.log("done false")
       }
-      // console.log(window.scrollY,scroll)
+      console.log(window.scrollY,scroll)
     }
 
     window.addEventListener("scroll", handleScroll);
@@ -67,10 +67,10 @@ export default function Header() {
   }
 
   return (
-    <div className="back w-">
+    <div className="back z-10 ">
       <div
         className={`flex justify-between h-28 font-Ubuntu shadow-md  w-screen fixed ease-in transition-all duration-300 ${
-          scroll ? "bg-red-700" : ""
+          scroll ? "bg-red-700" : "bg-black"
         }`}
       >
         <div className="text-5xl ml-20 mt-6 mb-6 space-x-4 tracking-widest cursor-pointer text-white h-10">
@@ -134,14 +134,14 @@ export default function Header() {
   );
 }
 
-function FrontPage({ open }) {
+export function FrontPage({ open }) {
   const TEXTS = ["Coder", "Developer", "Believer"];
   console.log(open);
 
   return (
-    <div className="w-screen h-screen text-white overflow-x-hidden">
+    <div className="w-screen h-screen  text-white flex">
       <div
-        className={`lg:absolute transition ease-in duration-300 lg:left-56 lg:top-80 lg:space-y-5 md:absolute md:left-20 absolute top-1/2 left-20 w-full z-0 ${
+        className={`relative left-60 top-96 space-y-2 ${
           open ? "hidden" : ""
         }`}
       >
@@ -169,3 +169,5 @@ function FrontPage({ open }) {
     </div>
   );
 }
+
+

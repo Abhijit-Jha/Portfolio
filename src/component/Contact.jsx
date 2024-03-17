@@ -6,7 +6,7 @@ export default function Contact() {
       <div className="md:flex mt-10 ">
         <div className=" md:w-1/2 space-y-3 w-full text-white">
           <div className="font-bold text-3xl md:text-center text-center">Get in touch</div>
-          <div className="grid grid-cols-2 md:place-items-end space-x-5 place-items-center">
+          <div className="grid grid-cols-2 md:place-items-end space-x-5  place-items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -49,7 +49,7 @@ export default function Contact() {
               />
             </svg>
 
-            <div className="md:place-self-start md:static left-44 absolute font-semibold text-2xl p-4 ">
+            <div className="md:place-self-start md:static left-44 absolute font-semibold text-2xl p-4 text-white">
               Address
               <div className="place-self-center col-span-2 font-light text-wrap">
                 Mumbai ,India
