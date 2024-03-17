@@ -75,13 +75,13 @@ export default function Header() {
   }
 
   return (
-    <div className="back " ref={HomeRef}>
+    <div className="back" ref={HomeRef}>
       <div
-        className={`flex justify-between h-28 font-Ubuntu shadow-md  w-screen fixed ease-in transition-all duration-300 ${
+        className={`flex justify-between h-22 font-Ubuntu shadow-md  w-screen fixed ease-in transition-all duration-300 ${
           scroll ? "bg-red-700" : ""
         }`}
       >
-        <div className="text-5xl ml-20 mt-6 mb-6 space-x-4 tracking-widest cursor-pointer text-white h-10">
+        <div className="text-5xl md:ml-20 ml-12 mt-6 mb-6 space-x-4 tracking-widest cursor-pointer text-white h-10">
           Abhijit
         </div>
         <div
@@ -161,7 +161,7 @@ function FrontPage({ open }) {
   return (
     <div className="w-screen h-screen text-white overflow-x-hidden">
       <div
-        className={`absolute lg:top-80  lg:left-36 md:top-72 md:left-32 top-72 left-20 space-y-2 transition-all ease-in delay-75 ${
+        className={`absolute lg:top-80  lg:left-36 md:top-72 md:left-32 top-72 left-12 space-y-2 transition-all ease-in delay-75 ${
           open ? "hidden" : ""
         }`}
       >

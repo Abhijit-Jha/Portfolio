@@ -4,7 +4,7 @@ export default function Contact() {
       <div className="text-center font-bold text-4xl text-white"> Contact Me </div>
       <div className="text-center text-white ">Get in touch</div>
       <div className="md:flex mt-10 ">
-        <div className=" md:w-1/2 space-y-3 w-full text-white">
+        <div className=" md:w-1/2 md:space-y-2 space-y-2 w-full text-white ">
           <div className="font-bold text-3xl md:text-center text-center">Get in touch</div>
           <div className="grid grid-cols-2 md:place-items-end space-x-5 place-items-center">
             <svg
@@ -21,7 +21,7 @@ export default function Contact() {
                 d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
               />
             </svg>
-            <div className="md:place-self-start absolute md:static left-44 font-semibold text-2xl p-4 ">
+            <div className="md:place-self-start absolute md:static left-44 font-semibold md:text-2xl text-xl p-4 ">
               Name
               <div className="place-self-center col-span-2 font-light text-wrap">
                 Abhijit Jha
@@ -49,7 +49,7 @@ export default function Contact() {
               />
             </svg>
 
-            <div className="md:place-self-start md:static left-44 absolute font-semibold text-2xl p-4 ">
+            <div className="md:place-self-start md:static left-44 absolute font-semibold md:text-2xl text-xl p-4 ">
               Address
               <div className="place-self-center col-span-2 font-light text-wrap">
                 Mumbai ,India
@@ -72,9 +72,9 @@ export default function Contact() {
               />
             </svg>
 
-            <div className="md:place-self-start md:static w-52 left-44 absolute font-semibold text-2xl p-4 ">
+            <div className="md:place-self-start md:static w-40 left-44 absolute font-semibold md:text-2xl text-lg p-4 ">
               Email
-              <div className="place-self-center col-span-2 font-light text-wrap md:break-normal break-words">
+              <div className="place-self-center col-span-2 font-light text-wrap md:break-normal break-words ">
                 abhijeetjha204@gmail.com
               </div> 
             </div>

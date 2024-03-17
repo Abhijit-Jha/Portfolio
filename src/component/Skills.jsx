@@ -28,9 +28,9 @@ export default function Skills() {
 
 function CircularProgressbarAdder({ percentage, skillName }) {
   return (
-    <div className="w-40 space-y-3 place-self-center">
+    <div className="md:w-40  w-28 space-y-3 place-self-center">
       <CircularProgressbar
-        className="w-40"
+        className="md:w-40 w-28 place-self-center"
         value={percentage}
         text={`${percentage}%`}
         styles={buildStyles({

@@ -22,7 +22,7 @@ export default function About() {
           ></img>
         </div>
         <div className="mt-10 lg:text-center lg:flex lg:flex-col lg:space-x-3 space-y-3 lg:mr-60 md:ml-40 place-items-start">
-          <div className="flex space-x-2 ">
+          <div className="md:flex space-x-2 ">
             <div className="font-bold lg:text-4xl lg:ml-3 md:text-3xl text-xl whitespace-nowrap">
               Hello Everyone, I am
             </div>
