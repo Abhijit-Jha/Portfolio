@@ -1,9 +1,14 @@
 import background from "../store/image/BackgroundImage.jpg";
 import { TypeAnimation } from "react-type-animation";
+import CV from "../store/image/CV.txt"
+
+import { useRef } from "react";
+
+
 export default function About() {
   const TEXTS = ["Coder", "Developer", "Believer"];
   return (
-    <div className=" p-20 pt-0 bg-white ">
+    <div className=" p-20 pt-0 bg-white " >
       <div className="lg:text-5xl text-center lg:mt-10  md:text-4xl font-bold text-4xl">
         {" "}
         About me
@@ -17,7 +22,7 @@ export default function About() {
           ></img>
         </div>
         <div className="mt-10 lg:text-center lg:flex lg:flex-col lg:space-x-3 space-y-3 lg:mr-60 md:ml-40 place-items-start">
-          <div className="md:flex space-x-2 ">
+          <div className="flex space-x-2 ">
             <div className="font-bold lg:text-4xl lg:ml-3 md:text-3xl text-xl whitespace-nowrap">
               Hello Everyone, I am
             </div>
@@ -42,9 +47,11 @@ export default function About() {
             dicta nam id et excepturi tempora voluptate animi ad minus inventore
             expedita ullam dolore quod error nesciunt.lorem20 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, temporibus. Animi, saepe quas aspernatur iure maiores adipisci dignissimos labore tempore?
           </p>
-          <button className=" bg-red-700 w-36 h-12 rounded-lg  font-bold text-white text-center ease-in transition-all duration-300 hover:bg-white hover:text-red-700 border-2 border-red-700">
+          <a href={CV} download="Abhijit_CV">
+          <button   className=" bg-red-700 w-36 h-12 rounded-lg  font-bold text-white text-center ease-in transition-all duration-300 hover:bg-white hover:text-red-700 border-2 border-red-700" >
             Download CV
           </button>
+          </a>
         </div>
       </div>
     </div>

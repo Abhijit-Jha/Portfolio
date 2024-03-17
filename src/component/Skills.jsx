@@ -3,7 +3,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 export default function Skills() {
   return (
-    <div className="bg-black p-10">
+    <div className="bg-black p-10" ref={Skills}>
       <div className="text-center text-white text-4xl font-Ubuntu">
         My Skills
       </div>

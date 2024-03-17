@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="mt-4 mb-10 bg-black p-10">
+    <div className="mt-4 mb-10 bg-black p-10" ref={Contact}>
       <div className="text-center font-bold text-4xl text-white"> Contact Me </div>
       <div className="text-center text-white ">Get in touch</div>
       <div className="md:flex mt-10 ">
@@ -72,15 +72,15 @@ export default function Contact() {
               />
             </svg>
 
-            <div className="md:place-self-start md:static left-44 absolute font-semibold text-2xl p-4 text-wrap">
+            <div className="md:place-self-start md:static w-52 left-44 absolute font-semibold text-2xl p-4 ">
               Email
-              <div className="place-self-center col-span-2 font-light text-wrap">
+              <div className="place-self-center col-span-2 font-light text-wrap md:break-normal break-words">
                 abhijeetjha204@gmail.com
-              </div>
+              </div> 
             </div>
           </div>
         </div>
-        <div className="md:w-1/3 md:m-0 w-full ml-10 mt-8 md:mt-0">
+        <div className="md:w-1/3  w-full md:ml-10 mt-8 md:mt-0">
             <div className="font-extrabold mb-4 text-3xl text-white">Message me</div>
           <form>
             <div className="grid grid-cols-2 gap-4 mb-4">

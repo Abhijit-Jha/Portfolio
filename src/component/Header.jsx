@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 // import TextTransition, { presets } from "react-text-transition";
 import { TypeAnimation } from "react-type-animation";
+import { CompleteFrontPage } from "../App";
+
+
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
-
+  const HomeRef = useRef()
   function toggleMenu() {
     setOpen(!open);
   }
@@ -28,6 +31,11 @@ export default function Header() {
     };
   }, []);
 
+  //Scrolling
+  function handleScrollTo(element){
+    console.log(element)
+    window.scrollTo({top:element.current.offsetTop,behavior:"smooth"})
+  }
   function Menus() {
     if (open === false) {
       return (
@@ -67,7 +75,7 @@ export default function Header() {
   }
 
   return (
-    <div className="back w-">
+    <div className="back " ref={HomeRef}>
       <div
         className={`flex justify-between h-28 font-Ubuntu shadow-md  w-screen fixed ease-in transition-all duration-300 ${
           scroll ? "bg-red-700" : ""
@@ -91,37 +99,48 @@ export default function Header() {
            `}
         >
           <div
+            
             className={` ${
               scroll ? "" : "hover:text-red-700"
             }  ease-in transition-all duration-300 cursor-pointer h-10`}
+            onClick={()=>handleScrollTo(HomeRef)}
           >
             Home
           </div>
           <div
+            
             className={` ${
               scroll ? "" : "hover:text-red-700"
             }  ease-in transition-all duration-300 cursor-pointer h-10`}
+            onClick={()=>{handleScrollTo()}}
+
           >
             About
           </div>
           <div
+            
             className={` ${
               scroll ? "" : "hover:text-red-700"
             }  ease-in transition-all duration-300 cursor-pointer h-10`}
+            
           >
             Skill
           </div>
           <div
+            
             className={` ${
               scroll ? "" : "hover:text-red-700"
             }  ease-in transition-all duration-300 cursor-pointer h-10`}
+            
           >
             Projects
           </div>
           <div
+            
             className={` ${
               scroll ? "" : "hover:text-red-700"
             }  ease-in transition-all duration-300 cursor-pointer h-10`}
+            
           >
             Contact
           </div>
@@ -130,6 +149,7 @@ export default function Header() {
       <div className="">
         <FrontPage open={open} />
       </div>
+      
     </div>
   );
 }
@@ -141,14 +161,18 @@ function FrontPage({ open }) {
   return (
     <div className="w-screen h-screen text-white overflow-x-hidden">
       <div
-        className={`lg:absolute transition ease-in duration-300 lg:left-56 lg:top-80 lg:space-y-5 md:absolute md:left-20 absolute top-1/2 left-20 w-full z-0 ${
+        className={`absolute lg:top-80  lg:left-36 md:top-72 md:left-32 top-72 left-20 space-y-2 transition-all ease-in delay-75 ${
           open ? "hidden" : ""
         }`}
       >
-        <div className={`space-x-5 md:text-4xl text-2xl`}>Hello,my name is </div>
-        <div className="font-bold text-7xl tracking-wider">Abhijit Jha</div>
-        <div className="flex space-x-4  text-4xl">
-          <div>And I am a</div>
+        <div className={`space-x-5 md:text-4xl text-2xl `}>
+          Hello,my name is{" "}
+        </div>
+        <div className="font-bold md:text-7xl text-5xl tracking-wider">
+          Abhijit Jha
+        </div>
+        <div className="flex space-x-4  md:text-4xl text-2xl">
+          <div className="whitespace-nowrap">And I am a</div>
           <div>
             <TypeAnimation
               className="text-red-700"
@@ -161,11 +185,21 @@ function FrontPage({ open }) {
           </div>
         </div>
         <div>
-          <button className="bg-red-700 w-36 h-12 rounded-lg text-xl font-bold text-white text-center ease-in transition-all duration-300 hover:bg-transparent  border-2 border-red-700">
+          <button
+            onClick={function () {
+              window.open(
+                "https://www.instagram.com/_jha_abhijeet?igsh=YXNjOWg3aWt3M3lp",
+                "_blank"
+              );
+            }}
+            className="bg-red-700 w-36 h-12 rounded-lg text-xl font-bold text-white text-center ease-in transition-all duration-300 hover:bg-transparent  border-2 border-red-700"
+          >
             Join Now
           </button>
         </div>
       </div>
+
     </div>
   );
 }
+
