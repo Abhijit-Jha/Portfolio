@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="mt-4 mb-10 bg-black p-10" ref={Contact}>
+    <div className="mt-4  bg-black p-10" ref={Contact}>
       <div className="text-center font-bold text-4xl text-white"> Contact Me </div>
       <div className="text-center text-white ">Get in touch</div>
       <div className="md:flex mt-10 ">

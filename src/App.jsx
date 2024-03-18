@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import About from './component/About'
 import Contact from './component/Contact'
 import Projects from './component/Projects'
+import Footer from './component/Footer'
 
 function App() {
   return <>
@@ -41,6 +42,7 @@ export function CompleteFrontPage(){
   <Skills/>
   <Projects/>
   <Contact/>
+  <Footer/> 
   </>
 }
 
