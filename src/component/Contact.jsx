@@ -1,6 +1,23 @@
+import { useRef } from "react";
+import emailjs from '@emailjs/browser';
 export default function Contact() {
+  const form = useRef()
+  function submitForm(e){
+    e.preventDefault();
+    emailjs.sendForm('service_1ka1dsx', 'template_v52vc7r', form.current, {
+        publicKey: 'QofU_NVt9fgNW0ivv',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  }
   return (
-    <div className="mt-4  bg-black p-10" ref={Contact}>
+    <div className="mt-4  bg-black p-10" >
       <div className="text-center font-bold text-4xl text-white"> Contact Me </div>
       <div className="text-center text-white ">Get in touch</div>
       <div className="md:flex mt-10 ">
@@ -82,16 +99,17 @@ export default function Contact() {
         </div>
         <div className="md:w-1/3  w-full md:ml-10 mt-8 md:mt-0">
             <div className="font-extrabold mb-4 text-3xl text-white">Message me</div>
-          <form>
+          <div>
+          <form ref={form} onSubmit={submitForm}>
             <div className="grid grid-cols-2 gap-4 mb-4">
-            <input type="text" placeholder="Name" className="border-2 h-10 pl-2 font-Ubuntu rounded-lg bg-slate-50 "></input>
-            <input type="email" placeholder="Email" className="border-2 h-10 pl-2 rounded-lg font-Ubuntu bg-slate-50"></input>
+            <input type="text" placeholder="Name" className="border-2 h-10 pl-2 font-Ubuntu rounded-lg bg-slate-50 " name="user_name"></input>
+            <input type="email" placeholder="Email" className="border-2 h-10 pl-2 rounded-lg font-Ubuntu bg-slate-50" name="user_email"></input>
             </div>
-            <input type="text" placeholder="Subject" className="border-2 h-10 w-full pl-2 font-Ubuntu rounded-lg mb-4 bg-slate-50"></input>
-            <textarea type="" placeholder="Message" className="border-2 h-28 w-full pl-2 font-Ubuntu rounded-lg bg-slate-50 "></textarea>
-            <button className=" bg-red-700 w-40 h-14 mt-4 rounded-lg  font-bold text-white text-center ease-in transition-all duration-300 hover:bg-white hover:text-red-700 border-2 border-red-700">Send Message</button>
-
+            <input type="text" placeholder="Subject" className="border-2 h-10 w-full pl-2 font-Ubuntu rounded-lg mb-4 bg-slate-50" name="user_subject"></input>
+            <textarea type="" placeholder="Message" className="border-2 h-28 w-full pl-2 font-Ubuntu rounded-lg bg-slate-50 "name="message"></textarea>
+            <button className=" bg-red-700 w-40 h-14 mt-4 rounded-lg  font-bold text-white text-center ease-in transition-all duration-300 hover:bg-white hover:text-red-700 border-2 border-red-700" onClick={submitForm}>Send Message</button>
           </form>
+          </div>
         </div>
       </div>
     </div>
