@@ -91,7 +91,7 @@ export default function Contact() {
 
             <div className="md:place-self-start md:static w-40 left-44 absolute font-semibold md:text-2xl text-lg p-4 ">
               Email
-              <div className="place-self-center col-span-2 font-light text-wrap md:break-normal break-words ">
+              <div className="col-span-2 font-light text-wrap md:break-normal break-words ">
                 abhijeetjha204@gmail.com
               </div> 
             </div>

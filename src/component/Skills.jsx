@@ -13,14 +13,16 @@ export default function Skills() {
         </div>
       </div>
       <div className="grid lg:grid-cols-4 gap-10  lg:place-self-center md:ml-2 md:mt-2 space-y-4 md:grid-cols-3 grid-cols-2  transition-all ease-linear delay-150">
-        <CircularProgressbarAdder percentage={80} skillName="HTML" />
+        <CircularProgressbarAdder percentage={90} skillName="HTML" />
         <CircularProgressbarAdder percentage={80} skillName="CSS" />
-        <CircularProgressbarAdder percentage={85} skillName="JavaScript" />
-        <CircularProgressbarAdder percentage={80} skillName="NodeJS" />
-        <CircularProgressbarAdder percentage={80} skillName="React" />
+        <CircularProgressbarAdder percentage={95} skillName="JavaScript" />
+        <CircularProgressbarAdder percentage={90} skillName="NodeJS" />
+        <CircularProgressbarAdder percentage={97} skillName="React" />
         <CircularProgressbarAdder percentage={80} skillName="MongoDB" />
-        <CircularProgressbarAdder percentage={80} skillName="Express" />
+        <CircularProgressbarAdder percentage={95} skillName="Express" />
         <CircularProgressbarAdder percentage={80} skillName="Version Control" />
+        <CircularProgressbarAdder percentage={80} skillName="NextJs" />
+        <CircularProgressbarAdder percentage={80} skillName="Docker" />
       </div>
     </div>
   );

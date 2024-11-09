@@ -159,7 +159,7 @@ function FrontPage({ open }) {
   console.log(open);
 
   return (
-    <div className="w-screen h-screen text-white overflow-x-hidden">
+    <div className="w-screen h-screen text-white overflow-x-hidden z-50">
       <div
         className={`absolute lg:top-80  lg:left-36 md:top-72 md:left-32 top-72 left-12 space-y-2 transition-all ease-in delay-75 ${
           open ? "hidden" : ""
@@ -188,7 +188,7 @@ function FrontPage({ open }) {
           <button
             onClick={function () {
               window.open(
-                "https://www.instagram.com/_jha_abhijeet?igsh=YXNjOWg3aWt3M3lp",
+                "https://www.linkedin.com/in/abhijit-jha-7b1b851b8/",
                 "_blank"
               );
             }}
