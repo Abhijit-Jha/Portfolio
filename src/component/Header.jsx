@@ -3,12 +3,10 @@ import { useEffect, useState, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { CompleteFrontPage } from "../App";
 
-
-
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const HomeRef = useRef()
+  const HomeRef = useRef();
   function toggleMenu() {
     setOpen(!open);
   }
@@ -16,12 +14,9 @@ export default function Header() {
     function handleScroll() {
       if (window.scrollY > 100) {
         setScroll(true);
-        // console.log("done True")
       } else {
         setScroll(false);
-        // console.log("done false")
       }
-      // console.log(window.scrollY,scroll)
     }
 
     window.addEventListener("scroll", handleScroll);
@@ -32,9 +27,9 @@ export default function Header() {
   }, []);
 
   //Scrolling
-  function handleScrollTo(element){
-    console.log(element)
-    window.scrollTo({top:element.current.offsetTop,behavior:"smooth"})
+  function handleScrollTo(element) {
+    console.log(element);
+    window.scrollTo({ top: element.current.offsetTop, behavior: "smooth" });
   }
   function Menus() {
     if (open === false) {
@@ -99,48 +94,41 @@ export default function Header() {
            `}
         >
           <div
-            
             className={` ${
               scroll ? "" : "hover:text-red-700"
             }  ease-in transition-all duration-300 cursor-pointer h-10`}
-            onClick={()=>handleScrollTo(HomeRef)}
+            onClick={() => handleScrollTo(HomeRef)}
           >
             Home
           </div>
           <div
-            
             className={` ${
               scroll ? "" : "hover:text-red-700"
             }  ease-in transition-all duration-300 cursor-pointer h-10`}
-            onClick={()=>{handleScrollTo()}}
-
+            onClick={() => {
+              handleScrollTo();
+            }}
           >
             About
           </div>
           <div
-            
             className={` ${
               scroll ? "" : "hover:text-red-700"
             }  ease-in transition-all duration-300 cursor-pointer h-10`}
-            
           >
             Skill
           </div>
           <div
-            
             className={` ${
               scroll ? "" : "hover:text-red-700"
             }  ease-in transition-all duration-300 cursor-pointer h-10`}
-            
           >
             Projects
           </div>
           <div
-            
             className={` ${
               scroll ? "" : "hover:text-red-700"
             }  ease-in transition-all duration-300 cursor-pointer h-10`}
-            
           >
             Contact
           </div>
@@ -149,14 +137,13 @@ export default function Header() {
       <div className="">
         <FrontPage open={open} />
       </div>
-      
     </div>
   );
 }
 
 function FrontPage({ open }) {
   const TEXTS = ["Coder", "Developer", "Believer"];
-  console.log(open);
+  
 
   return (
     <div className="w-screen h-screen text-white overflow-x-hidden z-50">
@@ -198,8 +185,6 @@ function FrontPage({ open }) {
           </button>
         </div>
       </div>
-
     </div>
   );
 }
-
